@@ -1,0 +1,49 @@
+{
+  "name": "jardistools/dbschema",
+  "description": "A flexible package for analyzing and managing database schemas (PDO-based) with support for MySQL/MariaDB, PostgreSQL, and SQLite",
+  "version": "1.0.0",
+  "type": "library",
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "authors": [
+    {
+      "name": "Jardis Development",
+      "email": "jardisDev@headgent.com"
+    }
+  ],
+  "require": {
+    "php": ">=8.2",
+    "jardisport/dbschema": "^1.0",
+    "jardissupport/dotenv": "^1.0",
+    "ext-pdo": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^10.5",
+    "phpstan/phpstan": "^2.0.4",
+    "squizlabs/php_codesniffer": "^3.11.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "JardisTools\\DbSchema\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "JardisTools\\DbSchema\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "echo '#!/usr/bin/env bash' > .git/hooks/pre-commit",
+      "echo 'bash ./support/pre-commit-hook.sh' >> .git/hooks/pre-commit",
+      "chmod +x .git/hooks/pre-commit"
+    ]
+  },
+  "homepage": "https://github.com/jardisTools/dbschema",
+  "support": {
+    "issues": "https://github.com/jardisTools/dbschema/issues",
+    "email": "jardisDev@headgent.com"
+  },
+  "keywords": ["database", "pdo", "schema", "domain driven design", "jardis", "Headgent"]
+}
