@@ -1,7 +1,6 @@
 {
     "name": "jardistools/dbschema",
     "description": "A flexible package for analyzing and managing database schemas (PDO-based) with support for MySQL/MariaDB, PostgreSQL, and SQLite",
-    "version": "1.0.0",
     "type": "library",
     "license": "PolyForm-Noncommercial-1.0.0",
     "minimum-stability": "stable",
