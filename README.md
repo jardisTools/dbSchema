@@ -7,9 +7,9 @@
 [![PSR-12](https://img.shields.io/badge/Code%20Style-PSR--12-blue.svg)](phpcs.xml)
 [![Coverage](https://img.shields.io/badge/Coverage-94.23%25-brightgreen.svg)](https://github.com/jardisTools/dbSchema)
 
-> Part of the **[Jardis Business Platform](https://jardis.io)** — Enterprise-grade PHP components for Domain-Driven Design
+> Part of **[Jardis](https://jardis.io)** — the Domain-Driven Design platform for PHP. You model your domain; Jardis generates the production-ready hexagonal code (DTOs, Command/Query handlers, repositories, persistence). This package is part of the open-source foundation that generated code runs on.
 
-Database schema introspection and DDL export. Reads table structures, columns, indexes, and foreign keys from live databases via PDO. Exports to SQL (CREATE TABLE), JSON, or PHP arrays. Dialect-aware for MySQL, MariaDB, PostgreSQL, and SQLite.
+Database schema analysis for PHP — introspects and exports the structure of live databases via PDO. Reads tables, columns, indexes, and foreign keys, then emits SQL (CREATE TABLE), JSON, or PHP arrays for schema import, diffing, or as the schema on-ramp for hexagonal code generation. Dialect-aware for MySQL, MariaDB, PostgreSQL, and SQLite.
 
 ---
 
@@ -17,7 +17,7 @@ Database schema introspection and DDL export. Reads table structures, columns, i
 
 - **Schema Introspection** — reads tables, columns, indexes, and foreign keys from a live database
 - **DDL Export** — generates `CREATE TABLE` SQL scripts with dialect-correct syntax
-- **JSON Export** — structured JSON output suitable for storage, diffing, or feeding the Jardis Builder
+- **JSON Export** — structured JSON output suitable for storage, diffing, or feeding Jardis code generation
 - **Array Export** — PHP array representation for programmatic processing
 - **Multi-Database** — MySQL, MariaDB, PostgreSQL, and SQLite via automatic PDO driver detection
 - **Abstract Type Mapping** — `fieldType()` normalises driver-specific column types to portable abstract types
@@ -45,7 +45,7 @@ $exporter = new DbSchemaExporter($reader);
 // List all tables
 $tables = $reader->tables();
 
-// Export schema as JSON (suitable for Jardis Builder input)
+// Export schema as JSON (suitable as Jardis code-generation input)
 $json = $exporter->toJson($tables, prettyPrint: true);
 file_put_contents('schema.json', $json);
 ```
@@ -82,7 +82,7 @@ $schema = $exporter->toArray(['orders', 'order_lines']);
 //   'tables'    => ['orders' => ['columns' => [...], 'indexes' => [...], 'foreignKeys' => [...]]]
 // ]
 
-// Feed directly into the Jardis Builder
+// Feed the schema array into Jardis for code generation
 use JardisTools\Builder\Config\DatabaseSchema;
 $databaseSchema = DatabaseSchema::fromArray($schema);
 ```
