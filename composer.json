@@ -40,8 +40,14 @@
         "database",
         "pdo",
         "schema",
-        "domain driven design",
+        "ddl",
+        "database-introspection",
+        "mysql",
+        "postgres",
+        "sqlite",
+        "domain-driven-design",
+        "php",
         "jardis",
-        "Headgent"
+        "headgent"
     ]
 }
