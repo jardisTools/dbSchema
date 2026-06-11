@@ -1,6 +1,6 @@
 {
     "name": "jardistools/dbschema",
-    "homepage": "https://docs.jardis.io/en/tools/dbschema",
+    "homepage": "https://jardis.io",
     "description": "Database schema introspection and DDL export for MySQL, MariaDB, PostgreSQL, and SQLite",
     "type": "library",
     "license": "MIT",
@@ -32,8 +32,10 @@
         "psr-4": {
             "JardisTools\\DbSchema\\Tests\\": "tests/"
         }
-    },    "support": {
-        "issues": "https://github.com/jardisTools/dbschema/issues",
+    },
+    "support": {
+        "issues": "https://github.com/jardisTools/dbSchema/issues",
+        "docs": "https://docs.jardis.io/en/tools/dbschema",
         "email": "jardisDev@headgent.com"
     },
     "keywords": [
